@@ -1,0 +1,13 @@
+footer a {
+    transition: color 0.3s;
+  }
+  
+  footer a:hover {
+    color: #3b82f6;
+  }
+  
+  footer ul li {
+    list-style: none;
+    margin-right: 20px;
+  }
+  
