@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebaseConfig";
 import { Link } from "react-router-dom";
-
+import logo from '../../assets/smslogo.png'
 const Home = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -169,14 +169,17 @@ const Home = () => {
         </div>
       </div>
       {/* Footer Section */}
-<footer className="bg-blue-900 text-white text-center py-6 w-310 ml-60 ">
-  <div className="container mx-auto px-4">
+      <footer className="bg-blue-900 text-white text-center h-50 w-310 ml-58 -mb-25 py-6">
+       
+  <div className="container mx-auto px-10">
+  
     <div className="flex flex-col md:flex-row justify-between items-center">
+    <div className="h-10 w-20"><img src={logo} alt="l"/></div>
       {/* Footer Links */}
       <div className="mb-4 md:mb-0">
-        <ul className="flex space-x-4 justify-center md:justify-start">
+        <ul className="flex space-x-20 mr-70 justify-center md:justify-start">
           <li>
-            <Link to="/" className="hover:text-blue-400 transition">
+            <Link to="/home" className="hover:text-blue-400 transition">
               Home
             </Link>
           </li>
@@ -186,7 +189,7 @@ const Home = () => {
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-blue-400 transition">
+            <Link to="/contactus" className="hover:text-blue-400 transition">
               Contact Us
             </Link>
           </li>
@@ -197,15 +200,10 @@ const Home = () => {
           </li>
         </ul>
       </div>
-
-      {/* Copyright */}
-      <div className="text-sm">
-        © {new Date().getFullYear()} Sadha Mee Seva Lo. All rights reserved.
-      </div>
     </div>
 
     {/* Social Media Icons */}
-    <div className=" mt-8 flex justify-center space-x-6">
+    <div className="mt-12 flex justify-center space-x-6">
       <a href="#" target="_blank" rel="noopener noreferrer">
         <i className="fab fa-facebook-f text-xl hover:text-blue-400"></i>
       </a>
@@ -219,8 +217,14 @@ const Home = () => {
         <i className="fab fa-linkedin-in text-xl hover:text-blue-400"></i>
       </a>
     </div>
+
+    {/* Copyright */}
+    <div className="text-sm mt-10">
+      © {new Date().getFullYear()} Sadha Mee Seva Lo. All rights reserved.
+    </div>
   </div>
 </footer>
+
 
     </div>
   );

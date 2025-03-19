@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/smslogo.png";
-import profile from "../../../assets/profil.png";
+// import profile from "../../../assets/profil.png";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,6 +43,9 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6 text-lg font-semibold">
+        <Link to="/home" className="text-blue-600 hover:text-red-500 -ml-10 transition-colors duration-200">
+         Home
+        </Link>
           <Link
             to="/about"
             className="text-blue-600 hover:text-red-500 transition-colors duration-200"
@@ -58,7 +61,7 @@ const Navbar = () => {
         </div>
 
         {/* Profile Image - Open Pop-up */}
-        <div
+        {/* <div
           className="cursor-pointer ml-4"
           onClick={() => setIsModalOpen(true)}
         >
@@ -67,7 +70,7 @@ const Navbar = () => {
             className="h-10 w-10 rounded-full hover:scale-105 transition-transform duration-200"
             alt="Profile"
           />
-        </div>
+        </div> */}
       </div>
 
       {/* Profile Pop-up */}
