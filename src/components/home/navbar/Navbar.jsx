@@ -35,17 +35,19 @@ const Navbar = () => {
             alt="logo"
             className="h-10 w-auto hover:scale-105 transition-transform duration-200"
           />
-          <span className="text-black ml-120 text-4xl text-center mr-50 font-extrabold 
-    drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)] ">
+          <span className="text-black ml-130 text-4xl font-extrabold drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]">
             SHORT <span className="text-blue-600">MESSAGE</span> SERVICE
           </span>
         </Link>
 
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6 text-lg font-semibold">
-        <Link to="/home" className="text-blue-600 hover:text-red-500 -ml-10 transition-colors duration-200">
-         Home
-        </Link>
+          <Link
+            to="/home"
+            className="text-blue-600 hover:text-red-500 transition-colors duration-200"
+          >
+            Home
+          </Link>
           <Link
             to="/about"
             className="text-blue-600 hover:text-red-500 transition-colors duration-200"
@@ -59,24 +61,11 @@ const Navbar = () => {
             Contact Us
           </Link>
         </div>
-
-        {/* Profile Image - Open Pop-up */}
-        {/* <div
-          className="cursor-pointer ml-4"
-          onClick={() => setIsModalOpen(true)}
-        >
-          <img
-            src={profile}
-            className="h-10 w-10 rounded-full hover:scale-105 transition-transform duration-200"
-            alt="Profile"
-          />
-        </div> */}
       </div>
 
       {/* Profile Pop-up */}
       {isModalOpen && (
         <div className="fixed top-16 right-5 bg-white p-6 rounded-lg w-80 shadow-lg border border-gray-200">
-          {/* Profile Fields */}
           <div className="space-y-3">
             <div>
               <label className="block font-medium">Name:</label>

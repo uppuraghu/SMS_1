@@ -10,4 +10,20 @@ footer a {
     list-style: none;
     margin-right: 20px;
   }
+  @media (max-width: 768px) {
+    footer {
+      text-align: center;
+    }
+  
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    footer ul {
+      display: inline-block;
+      text-align: center;
+    }
+  }
   

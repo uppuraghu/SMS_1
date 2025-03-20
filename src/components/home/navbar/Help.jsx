@@ -1,5 +1,5 @@
-import React,{useState} from "react";
-import './styles.css'
+import React, { useState } from "react";
+
 const serviceOptions = {
   Banking: [
     {
@@ -81,17 +81,21 @@ const Helpp = () => {
       setMessages([...messages, { sender: "bot", text: "Process complete!" }]);
     }
   };
+
   return (
-    <div className="support-container">
-      <div className="support-box">
-        <h2 className="support-title">WELCOME TO HELP PAGE</h2>
+    <div className="flex justify-center items-center h-screen bg-gray-100 font-sans">
+      <div className="bg-white p-6 rounded-lg shadow-md w-96 text-center">
+        <h2 className="text-xl font-bold mb-4 text-gray-800">
+          WELCOME TO HELP PAGE
+        </h2>
+
         {!selectedService ? (
-          <div className="options-container">
-            <p className="prompt-text">Select a service:</p>
+          <div className="flex flex-col gap-4">
+            <p className="text-lg font-semibold">Select a service:</p>
             {Object.keys(serviceOptions).map((service) => (
               <button
                 key={service}
-                className="service-button"
+                className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
                 onClick={() => handleServiceSelect(service)}
               >
                 {service}
@@ -99,12 +103,12 @@ const Helpp = () => {
             ))}
           </div>
         ) : !selectedOption ? (
-          <div className="options-container">
-            <p className="prompt-text">Choose an option:</p>
+          <div className="flex flex-col gap-4">
+            <p className="text-lg font-semibold">Choose an option:</p>
             {serviceOptions[selectedService].map((option, index) => (
               <button
                 key={index}
-                className="option-button"
+                className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
                 onClick={() => handleOptionSelect(option)}
               >
                 {option.option}
@@ -112,20 +116,25 @@ const Helpp = () => {
             ))}
           </div>
         ) : (
-          <div className="chat-container">
-            <div className="chat-box">
+          <div className="flex flex-col items-center">
+            <div className="bg-gray-200 p-4 rounded w-full h-48 overflow-y-auto mb-4">
               {messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`chat-message ${
-                    msg.sender === "user" ? "user-message" : "bot-message"
+                  className={`p-2 rounded mb-2 max-w-[80%] ${
+                    msg.sender === "user"
+                      ? "bg-red-100 ml-auto text-right"
+                      : "bg-green-100 text-left"
                   }`}
                 >
                   {msg.text}
                 </div>
               ))}
             </div>
-            <button onClick={handleNextStep} className="next-button">
+            <button
+              onClick={handleNextStep}
+              className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
+            >
               Next Step
             </button>
           </div>
@@ -133,9 +142,6 @@ const Helpp = () => {
       </div>
     </div>
   );
-}
-
-  
-
+};
 
 export default Helpp;
