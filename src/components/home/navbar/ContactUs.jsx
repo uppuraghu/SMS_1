@@ -31,7 +31,7 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="w-full py-10 flex flex-col text-center items-center mt-30 w-full">
+    <div className="w-full py-10 flex flex-col text-center items-center w-full">
       <h1 className="text-4xl font-bold text-blue-600 capitalize mb-8">
         Get In touch with Us
       </h1>
