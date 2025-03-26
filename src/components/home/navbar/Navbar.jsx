@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/smslogo.png";
-// import profile from "../../../assets/profil.png";
+import profile from "../../../assets/profil.png";
 
 const Navbar = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -26,18 +26,23 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed z-10 w-full bg-white shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-3 px-6">
+    <div className="fixed z-10 w-full bg-white h-22 shadow-sm">
+      <div className="container mx-auto -mt-8 flex items-center justify-between py-3 px-6">
         {/* Logo */}
         <Link to="/home" className="flex items-center">
           <img
             src={logo}
             alt="logo"
-            className="h-10 w-auto hover:scale-105 transition-transform duration-200"
+            className="h-12 w-auto hover:scale-105 transition-transform duration-200"
           />
-          <span className="text-black ml-130 text-4xl font-extrabold drop-shadow-[3px_3px_0px_rgba(0,0,0,0.5)]">
-            SHORT <span className="text-blue-600">MESSAGE</span> SERVICE
-          </span>
+         <div className="text-center ml-100 mt-12">
+          <h3 className="text-3xl md:text-4xl text-black font-extrabold mb-3 ">
+            Welcome to <span className="text-blue-600">SMS</span>
+          </h3>
+          <p className="text-gray-500 -mt-5 text-lg">
+            Sadha Mee Seva Lo - Connecting You to Essential Services
+          </p>
+        </div>
         </Link>
 
         {/* Navigation Links */}
@@ -61,9 +66,21 @@ const Navbar = () => {
             Contact Us
           </Link>
         </div>
+
+        {/* Profile Icon */}
+        <div
+          className="relative cursor-pointer"
+          onClick={() => setIsModalOpen(!isModalOpen)}
+        >
+          <img
+            src={profile}
+            alt="Profile"
+            className="h-10 w-10 rounded-full border-2 border-gray-300 hover:border-blue-500"
+          />
+        </div>
       </div>
 
-      {/* Profile Pop-up */}
+      {/* Profile Modal */}
       {isModalOpen && (
         <div className="fixed top-16 right-5 bg-white p-6 rounded-lg w-80 shadow-lg border border-gray-200">
           <div className="space-y-3">
